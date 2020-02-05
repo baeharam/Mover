@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Content } from './style';
 import { Wrapper } from 'styles/variables';
+import { Container, Content } from './style';
 
 const HomeFooter = () => {
   return (

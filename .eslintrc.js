@@ -4,6 +4,13 @@ module.exports = {
     "plugin:prettier/recommended",
     "prettier/react"
   ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  },
   "env": {
     "browser": true,
     "commonjs": true,

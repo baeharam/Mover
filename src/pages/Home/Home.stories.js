@@ -6,4 +6,4 @@ export default {
   component: Home,
 };
 
-export const standard = () => <Home />;
+export const NotLoginPage = () => <Home />;

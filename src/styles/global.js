@@ -16,6 +16,8 @@ const GlobalStyle = createGlobalStyle`
   button {
     border: none;
     font: inherit;
+    outline: none;
+    cursor: pointer;
   }
 `;
 

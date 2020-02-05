@@ -1,4 +1,6 @@
-import React from 'react';
+// @flow
+
+import React, { useState } from 'react';
 import { Wrapper } from 'styles/variables';
 import {
   SearchSection,
@@ -6,9 +8,18 @@ import {
   SearchBar,
   SearchInput,
   SearchIcon,
+  CloseIcon,
 } from './style';
 
 const HomeSearch = () => {
+  const [searchValue, setSearchValue] = useState('');
+  const onChangeSearch = e => {
+    setSearchValue(e.target.value);
+  };
+  const onClickClose = () => {
+    setSearchValue('');
+  };
+
   return (
     <SearchSection>
       <Wrapper>
@@ -16,7 +27,12 @@ const HomeSearch = () => {
           <form action="">
             <SearchBar>
               <SearchIcon />
-              <SearchInput placeholder="영화,배우,감독을 검색해보세요." />
+              <SearchInput
+                onChange={onChangeSearch}
+                value={searchValue}
+                placeholder="영화,배우,감독을 검색해보세요."
+              />
+              {searchValue ? <CloseIcon onClick={onClickClose} /> : null}
             </SearchBar>
           </form>
         </Container>

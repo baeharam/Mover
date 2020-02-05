@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 import oc from 'open-color-js';
 import { FaSearch } from 'react-icons/fa';
-import { device, searchBackgroundColor, homeSearchHeight } from 'styles/variables';
+import { IoIosCloseCircle } from 'react-icons/io';
+import {
+  device,
+  searchBackgroundColor,
+  homeSearchHeight,
+} from 'styles/variables';
 
 const SearchSection = styled.section`
   background-color: ${searchBackgroundColor};
@@ -34,7 +39,6 @@ const SearchBar = styled.div`
 `;
 
 const SearchIcon = styled(FaSearch)`
-  height: 100%;
   font-size: 20px;
   margin-right: 10px;
   color: ${oc.gray5};
@@ -54,4 +58,16 @@ const SearchInput = styled.input`
   }
 `;
 
-export { SearchSection, Container, SearchBar, SearchInput, SearchIcon };
+const CloseIcon = styled(IoIosCloseCircle)`
+  font-size: 20px;
+  color: ${oc.gray5};
+`;
+
+export {
+  SearchSection,
+  Container,
+  SearchBar,
+  SearchInput,
+  SearchIcon,
+  CloseIcon,
+};

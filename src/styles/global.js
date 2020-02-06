@@ -12,12 +12,16 @@ const GlobalStyle = createGlobalStyle`
   input {
     font-family: inherit;
     outline: none;
+    border: none;
   }
   button {
     border: none;
     font: inherit;
     outline: none;
     cursor: pointer;
+  }
+  a {
+    text-decoration: none;
   }
 `;
 

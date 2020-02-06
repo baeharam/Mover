@@ -1,12 +1,18 @@
 // @flow
 
 import React from 'react';
-import { HomeHeader, HomeSearch, HomeFooter } from 'components/Home/index';
+import {
+  HomeHeader,
+  HomeIntro,
+  HomeSearch,
+  HomeFooter,
+} from 'components/Home/index';
 
 const Home = () => {
   return (
     <>
       <HomeHeader />
+      <HomeIntro />
       <HomeSearch />
       <HomeFooter />
     </>

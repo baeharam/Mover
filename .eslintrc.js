@@ -1,8 +1,12 @@
 module.exports = {
+  "parser": "babel-eslint",
   "extends": [
     "airbnb",
     "plugin:prettier/recommended",
     "prettier/react"
+  ],
+  "plugins": [
+    "flowtype"
   ],
   "settings": {
     "import/resolver": {
@@ -21,6 +25,7 @@ module.exports = {
   "rules": {
     "jsx-a11y/href-no-hash": ["off"],
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "no-unused-expressions": "off",
     "max-len": [
       "warn",
       {

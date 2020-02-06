@@ -1,14 +1,14 @@
 // @flow
 
 import styled from 'styled-components';
-import { homeHeaderHeight, homeHeaderNavBgColor } from 'styles/variables';
+import { weakBlackColor } from 'styles/variables';
 
 const HomeHeader = styled.header`
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  height: ${homeHeaderHeight};
+  height: 10vh;
 `;
 
 const Container = styled.div`
@@ -60,7 +60,7 @@ const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: ${homeHeaderNavBgColor};
+  background-color: ${weakBlackColor};
   opacity: 0.93;
   transform: ${({ open }) => (open ? 'translateY(0)' : 'translateY(-100%)')};
   transition: transform 0.2s linear;

@@ -2,14 +2,10 @@ import styled from 'styled-components';
 import oc from 'open-color-js';
 import { FaSearch } from 'react-icons/fa';
 import { IoIosCloseCircle } from 'react-icons/io';
-import {
-  device,
-  homeSearchSectionBgColor,
-  homeSearchHeight,
-} from 'styles/variables';
+import { device, beigeColor } from 'styles/variables';
 
 const SearchSection = styled.section`
-  background-color: ${homeSearchSectionBgColor};
+  background-color: ${beigeColor};
 `;
 
 const Container = styled.div`
@@ -17,7 +13,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: ${homeSearchHeight};
+  height: 40vh;
 `;
 
 const SearchBar = styled.div`

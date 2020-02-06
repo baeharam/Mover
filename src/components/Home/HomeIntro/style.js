@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { homeIntroHeight } from 'styles/variables';
 
 const Intro = styled.section`
   background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
@@ -11,7 +10,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 80px;
-  height: ${homeIntroHeight};
+  height: 50vh;
 `;
 
 const Title = styled.h1`

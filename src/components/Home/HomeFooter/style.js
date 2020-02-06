@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { homeIntroHeight, homeSearchHeight } from 'styles/variables';
 
 const Container = styled.div`
-  height: calc(105vh - (${homeIntroHeight} + ${homeSearchHeight}));
+  height: 15vh;
 `;
 
 const Content = styled.p`

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import oc from 'open-color-js';
-import { LoginPopupBgColor } from 'styles/variables';
+import { weakBlackColor, primaryColor } from 'styles/variables';
 
 const Popup = styled.div`
   position: fixed;
   left: 0;
   bottom: 0;
-  background-color: ${LoginPopupBgColor};
+  background-color: ${weakBlackColor};
   opacity: 0.93;
   width: 100%;
 `;
@@ -32,7 +32,7 @@ const ButtonContainer = styled.div`
 
 const SignUpButton = styled.button`
   display: block;
-  background-color: ${oc.pink7};
+  background-color: ${primaryColor};
   color: white;
   padding: 7px 10px;
   border-radius: 5px;

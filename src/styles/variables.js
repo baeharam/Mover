@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+// Themeing
+
+export const primaryColor = '#ff2e77';
+export const beigeColor = '#f5f5f5';
+export const weakBlackColor = '#232323';
+
 // Component
 
 export const Wrapper = styled.div`
@@ -7,20 +13,8 @@ export const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
-// General
-
-// Home
-export const homeIntroHeight = '50vh';
-export const homeSearchHeight = '40vh';
-export const homeSearchSectionBgColor = '#fbf4f9';
-export const homeHeaderHeight = '10vh';
-export const homeHeaderNavBgColor = '#232323';
-
-// LoginPopup
-export const LoginPopupBgColor = '#232323';
-
-
 // Media Query
+
 const size = {
   mobileS: '320px',
   mobileM: '375px',

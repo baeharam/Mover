@@ -1,34 +1,47 @@
 // @flow
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Wrapper } from 'styles/variables';
-import {
-  Header,
-  StarIcon,
-  ProfileImg,
-  Intro,
-  Title,
-  SubTitle,
-  Container,
-  HeaderSection,
-} from './style';
+import * as S from './style';
+import { type propTypes } from './types';
+
+const MenuButton = ({ onClickMenu, open }: propTypes) => {
+  return (
+    <S.MenuButton
+      open={open}
+      onClick={onClickMenu}
+      type="button"
+      aria-label="메뉴"
+    >
+      <div />
+      <div />
+      <div />
+    </S.MenuButton>
+  );
+};
 
 const HomeHeader = () => {
+  const [open, setOpen] = useState(false);
+  const onClickMenu = () => {
+    setOpen(!open);
+  };
+
   return (
-    <HeaderSection>
+    <S.HomeHeader>
+      <S.Nav open={open}>
+        <S.UL>
+          <S.LI>프로필</S.LI>
+          <S.LI>평가하기</S.LI>
+          <S.LI>컬렉션 둘러보기</S.LI>
+          <S.LI>칼럼 쓰기</S.LI>
+        </S.UL>
+      </S.Nav>
       <Wrapper>
-        <Container>
-          <Header>
-            <StarIcon />
-            <ProfileImg />
-          </Header>
-          <Intro>
-            <Title>MOVER</Title>
-            <SubTitle>영화보는 사람들의 쉼터</SubTitle>
-          </Intro>
-        </Container>
+        <S.Container>
+          <MenuButton open={open} onClickMenu={onClickMenu} />
+        </S.Container>
       </Wrapper>
-    </HeaderSection>
+    </S.HomeHeader>
   );
 };
 

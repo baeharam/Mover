@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import oc from 'open-color-js';
-import { homeLoginBgColor } from 'styles/variables';
+import { LoginPopupBgColor } from 'styles/variables';
 
 const Popup = styled.div`
   position: fixed;
   left: 0;
   bottom: 0;
-  background-color: ${homeLoginBgColor};
+  background-color: ${LoginPopupBgColor};
   opacity: 0.93;
   width: 100%;
 `;

@@ -4,12 +4,12 @@ import { FaSearch } from 'react-icons/fa';
 import { IoIosCloseCircle } from 'react-icons/io';
 import {
   device,
-  searchBackgroundColor,
+  homeSearchSectionBgColor,
   homeSearchHeight,
 } from 'styles/variables';
 
 const SearchSection = styled.section`
-  background-color: ${searchBackgroundColor};
+  background-color: ${homeSearchSectionBgColor};
 `;
 
 const Container = styled.div`

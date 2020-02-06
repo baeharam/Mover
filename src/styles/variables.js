@@ -9,11 +9,16 @@ export const Wrapper = styled.div`
 
 // General
 
-export const searchBackgroundColor = '#fbf4f9';
-export const homeLoginBgColor = '#232323';
-
-export const homeHeaderHeight = '50vh';
+// Home
+export const homeIntroHeight = '50vh';
 export const homeSearchHeight = '40vh';
+export const homeSearchSectionBgColor = '#fbf4f9';
+export const homeHeaderHeight = '10vh';
+export const homeHeaderNavBgColor = '#232323';
+
+// LoginPopup
+export const LoginPopupBgColor = '#232323';
+
 
 // Media Query
 const size = {

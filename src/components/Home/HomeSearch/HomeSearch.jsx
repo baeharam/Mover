@@ -2,14 +2,7 @@
 
 import React, { useState } from 'react';
 import { Wrapper } from 'styles/variables';
-import {
-  SearchSection,
-  Container,
-  SearchBar,
-  SearchInput,
-  SearchIcon,
-  CloseIcon,
-} from './style';
+import * as S from './style';
 
 const HomeSearch = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -21,23 +14,25 @@ const HomeSearch = () => {
   };
 
   return (
-    <SearchSection>
+    <S.SearchSection>
       <Wrapper>
-        <Container>
+        <S.Container>
           <form action="">
-            <SearchBar>
-              <SearchIcon />
-              <SearchInput
+            <S.SearchBar>
+              <S.SearchIcon />
+              <S.SearchInput
                 onChange={onChangeSearch}
                 value={searchValue}
                 placeholder="영화,배우,감독을 검색해보세요."
               />
-              {searchValue ? <CloseIcon onClick={onClickClose} /> : null}
-            </SearchBar>
+              {searchValue ? (
+                <S.CloseIcon aria-label="닫기" onClick={onClickClose} />
+              ) : null}
+            </S.SearchBar>
           </form>
-        </Container>
+        </S.Container>
       </Wrapper>
-    </SearchSection>
+    </S.SearchSection>
   );
 };
 

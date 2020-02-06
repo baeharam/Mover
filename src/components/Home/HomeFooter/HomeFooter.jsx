@@ -1,14 +1,16 @@
+// @flow
+
 import React from 'react';
 import { Wrapper } from 'styles/variables';
-import { Container, Content } from './style';
+import * as S from './style';
 
 const HomeFooter = () => {
   return (
     <footer>
       <Wrapper>
-        <Container>
-          <Content>현재 몇개의 별점이 쌓여있습니다.</Content>
-        </Container>
+        <S.Container>
+          <S.Content>현재 몇개의 별점이 쌓여있습니다.</S.Content>
+        </S.Container>
       </Wrapper>
     </footer>
   );

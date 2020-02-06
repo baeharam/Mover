@@ -1,27 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Wrapper } from 'styles/variables';
-import {
-  Popup,
-  Container,
-  Span,
-  ButtonContainer,
-  SignUpButton,
-  LoginButton,
-} from './style';
+import * as S from './style';
 
 const LoginPopup = () => {
   return (
-    <Popup>
+    <S.Popup>
       <Wrapper>
-        <Container>
-          <Span>MOVER</Span>
-          <ButtonContainer>
-            <LoginButton>로그인</LoginButton>
-            <SignUpButton>회원가입</SignUpButton>
-          </ButtonContainer>
-        </Container>
+        <S.Container>
+          <S.Span>MOVER</S.Span>
+          <S.ButtonContainer>
+            <S.LoginButton>로그인</S.LoginButton>
+            <Link to="/signup">
+              <S.SignUpButton>회원가입</S.SignUpButton>
+            </Link>
+          </S.ButtonContainer>
+        </S.Container>
       </Wrapper>
-    </Popup>
+    </S.Popup>
   );
 };
 

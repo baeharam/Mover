@@ -16,6 +16,7 @@ const SignUpMessage = styled.p`
   text-align: center;
   font-size: 1rem;
   padding: 1rem 0;
+  margin-bottom: 1rem;
 
   span {
     margin-left: 0.5rem;

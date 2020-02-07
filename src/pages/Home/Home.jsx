@@ -7,6 +7,7 @@ import {
   HomeSearch,
   HomeFooter,
 } from 'components/Home/index';
+import LoginPopup from 'components/LoginPopup/LoginPopup';
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <HomeIntro />
       <HomeSearch />
       <HomeFooter />
+      <LoginPopup />
     </>
   );
 };

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 // Themeing
 
 export const primaryColor = '#ff2e77';
+export const secondaryColor = '#3c5aa0';
 export const beigeColor = '#f5f5f5';
 export const weakBlackColor = '#232323';
 

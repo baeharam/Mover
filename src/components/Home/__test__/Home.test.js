@@ -7,14 +7,14 @@ import HomeIntro from '../HomeIntro/HomeIntro';
 import HomeSearch from '../HomeSearch/HomeSearch';
 import HomeFooter from '../HomeFooter/HomeFooter';
 
-describe('Test <Home />', () => {
-  describe('Test <HomeHeader />', () => {
-    test('Should have menu button', () => {
+describe('Home의 컴포넌트 테스트', () => {
+  describe('<HomeHeader />', () => {
+    test('메뉴버튼이 있어야 함', () => {
       const { getByLabelText } = render(<HomeHeader />);
       expect(getByLabelText('메뉴')).toBeInTheDocument;
     });
 
-    test('Should open menu when click button', () => {
+    test('메뉴 클릭시, [프로필/평가하기/컬렉션 둘러보기/칼럼 쓰기]가 나와야 함', () => {
       const { getByLabelText } = render(<HomeHeader />);
       const menuButton = getByLabelText('메뉴');
       fireEvent.click(menuButton);
@@ -25,29 +25,29 @@ describe('Test <Home />', () => {
     });
   });
 
-  describe('Test <HomeIntro/ >', () => {
-    test('Should have text', () => {
+  describe('<HomeIntro/ >', () => {
+    test('[MOVER], [영화보는 사람들의 쉼터] 텍스트가 있어야 함', () => {
       const { getByText } = render(<HomeIntro />);
       expect(getByText('MOVER')).toBeInTheDocument;
       expect(getByText('영화보는 사람들의 쉼터')).toBeInTheDocument;
     });
   });
 
-  describe('Test <HomeSearch />', () => {
-    test('Should have text', () => {
+  describe('<HomeSearch />', () => {
+    test('[영화,배우,감독을 검색해보세요.] 텍스트가 있어야 함', () => {
       const { getByPlaceholderText } = render(<HomeSearch />);
       expect(getByPlaceholderText('영화,배우,감독을 검색해보세요.'))
         .toBeInTheDocument;
     });
 
-    test('Should input works perfectly', () => {
+    test('input이 제대로 동작해야 함', () => {
       const { getByPlaceholderText } = render(<HomeSearch />);
       const input = getByPlaceholderText('영화,배우,감독을 검색해보세요.');
       fireEvent.change(input, { target: { value: '입력' } });
       expect(input.value).toBe('입력');
     });
 
-    test('Should show close button works perfectly', () => {
+    test('input이 활성화 될 때 닫기 버튼이 동작해야 함', () => {
       const { getByPlaceholderText } = render(<HomeSearch />);
       const input = getByPlaceholderText('영화,배우,감독을 검색해보세요.');
       fireEvent.change(input, { target: { value: '입력' } });
@@ -60,8 +60,8 @@ describe('Test <Home />', () => {
     });
   });
 
-  describe('Test <HomeFooter />', () => {
-    test('Should have content', () => {
+  describe('<HomeFooter />', () => {
+    test('[현재 몇개의 별점이 쌓여있습니다.] 텍스트가 있어야 함', () => {
       const { getByText } = render(<HomeFooter />);
       const content = getByText('현재 몇개의 별점이 쌓여있습니다.');
       expect(content).toBeInTheDocument();

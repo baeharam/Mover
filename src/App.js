@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyle from 'styles/global';
-import SignUp from 'pages/SignUp/SignUp';
-import Home from './pages/Home/Home';
+import { Home, SignUp, Login } from 'pages/index';
 
 function App() {
   return (
@@ -15,6 +14,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignUp />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
         </Switch>
       </Router>

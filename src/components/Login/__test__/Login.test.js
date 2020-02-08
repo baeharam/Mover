@@ -38,16 +38,17 @@ describe('Login의 컴포넌트 테스트', () => {
       expect(getByText('회원가입')).toBeInTheDocument;
     });
 
-    test('회원가입 링크가 정상 동작해야함', () => {
+    test('회원가입 링크 정상 동작해야 함', () => {
       const { getByText } = render(
-        <MemoryRouter initialEntries={['/login', '/signup']}>
+        <MemoryRouter>
           <LoginForm />
         </MemoryRouter>,
       );
 
-      const signUpButton = getByText('회원가입');
-      fireEvent.click(signUpButton);
-      expect(screen.getByText('회원가입')).toBeInTheDocument;
+      fireEvent.click(getByText('회원가입'));
+      expect(screen.getByTestId('location-display').textContent).toBe(
+        '/signup',
+      );
     });
   });
 });

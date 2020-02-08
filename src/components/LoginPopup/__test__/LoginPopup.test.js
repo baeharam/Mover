@@ -17,25 +17,25 @@ describe('LoginPopup의 테스트', () => {
     expect(getByText('회원가입')).toBeInTheDocument;
   });
 
-  test('회원가입 링크가 정상 동작해야 함', () => {
+  test('회원가입 링크 정상 동작해야 함', () => {
     const { getByText } = render(
-      <MemoryRouter initialEntries={['/', '/signup']}>
+      <MemoryRouter>
         <LoginPopup />
       </MemoryRouter>,
     );
-    const signUpButton = getByText('회원가입');
-    fireEvent.click(signUpButton);
-    expect(screen.getByText('회원가입')).toBeInTheDocument;
+
+    fireEvent.click(getByText('회원가입'));
+    expect(screen.getByTestId('location-display').textContent).toBe('/signup');
   });
 
-  test('로그인 링크가 정상 동작해야 함', () => {
+  test('회원가입 링크 정상 동작해야 함', () => {
     const { getByText } = render(
-      <MemoryRouter initialEntries={['/', '/login']}>
+      <MemoryRouter>
         <LoginPopup />
       </MemoryRouter>,
     );
-    const loginButton = getByText('로그인');
-    fireEvent.click(loginButton);
-    expect(screen.getByText('로그인')).toBeInTheDocument;
+
+    fireEvent.click(getByText('로그인'));
+    expect(screen.getByTestId('location-display').textContent).toBe('/login');
   });
 });

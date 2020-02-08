@@ -28,6 +28,7 @@ const Span = styled.span`
 
 const ButtonContainer = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const SignUpButton = styled.button`
@@ -36,12 +37,14 @@ const SignUpButton = styled.button`
   color: white;
   padding: 7px 10px;
   border-radius: 5px;
+  font-weight: bold;
 `;
 
 const LoginButton = styled.button`
   background-color: transparent;
   color: ${oc.gray4};
   margin-right: 10px;
+  font-weight: bold;
 `;
 
 export { Popup, Container, Span, ButtonContainer, SignUpButton, LoginButton };

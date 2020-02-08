@@ -82,6 +82,15 @@ const Message: ComponentType<*> = styled.p`
   }
 `;
 
+const Error: ComponentType<{ error: boolean }> = styled.p`
+  display: ${({ error }) => (error ? 'block' : 'none')};
+  margin-right: auto;
+  color: ${oc.red7};
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+`;
+
 export {
   Input,
   Form,
@@ -90,4 +99,5 @@ export {
   Message,
   buttonStyle,
   inputFontSize,
+  Error,
 };

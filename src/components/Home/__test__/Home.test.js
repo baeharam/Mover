@@ -42,18 +42,22 @@ describe('Home의 컴포넌트 테스트', () => {
 
     test('input이 제대로 동작해야 함', () => {
       const { getByPlaceholderText } = render(<HomeSearch />);
-      const input = getByPlaceholderText('영화,배우,감독을 검색해보세요.');
+      const input: HTMLElement = getByPlaceholderText(
+        '영화,배우,감독을 검색해보세요.',
+      );
       fireEvent.change(input, { target: { value: '입력' } });
       expect(input.value).toBe('입력');
     });
 
     test('input이 활성화 될 때 닫기 버튼이 동작해야 함', () => {
       const { getByPlaceholderText } = render(<HomeSearch />);
-      const input = getByPlaceholderText('영화,배우,감독을 검색해보세요.');
+      const input: HTMLElement = getByPlaceholderText(
+        '영화,배우,감독을 검색해보세요.',
+      );
       fireEvent.change(input, { target: { value: '입력' } });
 
-      const closeButton = screen.getByLabelText('닫기');
-      closeButton.toBeInTheDocument;
+      const closeButton: HTMLElement = screen.getByLabelText('닫기');
+      expect(closeButton).toBeInTheDocument;
 
       fireEvent.click(closeButton);
       expect(input.value).toBe('');

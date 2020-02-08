@@ -1,7 +1,10 @@
+// @flow
+
+import type { ComponentType } from 'react';
 import styled from 'styled-components';
 import { primaryColor } from 'styles/variables';
 
-const Container = styled.section`
+const Container: ComponentType<*> = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,13 +13,13 @@ const Container = styled.section`
   font-weight: bold;
 `;
 
-const Title = styled.h1`
+const Title: ComponentType<*> = styled.h1`
   color: ${primaryColor};
   font-size: 5rem;
   margin-bottom: 1rem;
 `;
 
-const SubTitle = styled.h2`
+const SubTitle: ComponentType<*> = styled.h2`
   color: black;
   font-size: 1.5rem;
 `;

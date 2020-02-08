@@ -15,6 +15,7 @@ module.exports = {
       }
     }
   },
+  "ignorePatterns": ["flow-typed", "node_modules/"],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -39,6 +40,10 @@ module.exports = {
         "ignoreTemplateLiterals": true,
         "ignoreRegExpLiterals": true
       }
-    ]
+    ],
+    "flowtype/require-valid-file-annotation": [
+      2,
+      "always"
+    ],
   }
 }

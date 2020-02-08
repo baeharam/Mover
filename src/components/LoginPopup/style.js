@@ -1,8 +1,11 @@
+// @flow
+
+import type { ComponentType } from 'react';
 import styled from 'styled-components';
 import oc from 'open-color-js';
 import { weakBlackColor, primaryColor } from 'styles/variables';
 
-const Popup = styled.div`
+const Popup: ComponentType<*> = styled.div`
   position: fixed;
   left: 0;
   bottom: 0;
@@ -11,7 +14,7 @@ const Popup = styled.div`
   width: 100%;
 `;
 
-const Container = styled.div`
+const Container: ComponentType<*> = styled.div`
   height: 10vh;
   display: flex;
   justify-content: space-between;
@@ -20,18 +23,18 @@ const Container = styled.div`
   font-weight: bold;
 `;
 
-const Span = styled.span`
+const Span: ComponentType<*> = styled.span`
   font-size: 20px;
   font-weight: bold;
   color: white;
 `;
 
-const ButtonContainer = styled.div`
+const ButtonContainer: ComponentType<*> = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const SignUpButton = styled.button`
+const SignUpButton: ComponentType<*> = styled.button`
   display: block;
   background-color: ${primaryColor};
   color: white;
@@ -40,7 +43,7 @@ const SignUpButton = styled.button`
   font-weight: bold;
 `;
 
-const LoginButton = styled.button`
+const LoginButton: ComponentType<*> = styled.button`
   background-color: transparent;
   color: ${oc.gray4};
   margin-right: 10px;

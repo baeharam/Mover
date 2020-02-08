@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import { Wrapper } from 'styles/variables';
 import { Container } from '../SignUpForm/style';

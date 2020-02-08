@@ -1,14 +1,17 @@
+// @flow
+
+import type { ComponentType } from 'react';
 import styled from 'styled-components';
 import oc from 'open-color-js';
 import { FaSearch } from 'react-icons/fa';
 import { IoIosCloseCircle } from 'react-icons/io';
 import { device, beigeColor } from 'styles/variables';
 
-const SearchSection = styled.section`
+const SearchSection: ComponentType<*> = styled.section`
   background-color: ${beigeColor};
 `;
 
-const Container = styled.div`
+const Container: ComponentType<*> = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -16,7 +19,7 @@ const Container = styled.div`
   height: 40vh;
 `;
 
-const SearchBar = styled.div`
+const SearchBar: ComponentType<*> = styled.div`
   display: flex;
   align-items: center;
   width: 85vw;
@@ -40,7 +43,7 @@ const SearchIcon = styled(FaSearch)`
   color: ${oc.gray5};
 `;
 
-const SearchInput = styled.input`
+const SearchInput: ComponentType<*> = styled.input`
   height: 100%;
   width: 100%;
   border-radius: 3px;

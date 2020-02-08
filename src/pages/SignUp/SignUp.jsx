@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import { SignUpIntro, SignUpForm, SignUpLogin } from 'components/SignUp/index';
 

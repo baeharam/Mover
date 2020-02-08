@@ -1,10 +1,13 @@
+// @flow
+
+import type { ComponentType } from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Container: ComponentType<*> = styled.div`
   height: 15vh;
 `;
 
-const Content = styled.p`
+const Content: ComponentType<*> = styled.p`
   display: flex;
   justify-content: center;
   margin-top: 20px;

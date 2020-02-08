@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import Login from './Login';

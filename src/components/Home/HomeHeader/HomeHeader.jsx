@@ -3,9 +3,9 @@
 import React, { useState } from 'react';
 import { Wrapper } from 'styles/variables';
 import * as S from './style';
-import { type propTypes } from './types';
+import type { MenuButtonType } from './types';
 
-const MenuButton = ({ onClickMenu, open }: propTypes) => {
+const MenuButton = ({ onClickMenu, open }: MenuButtonType) => {
   return (
     <S.MenuButton
       open={open}

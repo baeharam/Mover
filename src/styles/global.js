@@ -5,7 +5,7 @@ import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
-  * {
+  *,body {
     font-family: 'Noto Sans KR', sans-serif;
     user-select: none;
   }

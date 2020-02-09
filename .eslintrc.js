@@ -46,5 +46,7 @@ module.exports = {
       2,
       "always"
     ],
+    "no-param-reassign": ["error", { props: true, ignorePropertyModificationsFor: ["draft"] }],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
   }
 }

@@ -9,7 +9,7 @@ import {
   Input,
   SignUpButton,
 } from 'components/SignUp/SignUpForm/style';
-import { LocationDisplay } from 'App';
+import LocationDisplay from 'utils/router';
 import * as S from './style';
 
 const LoginForm = () => {

@@ -1,14 +1,9 @@
 // @flow
 
 import React from 'react';
-import { withRouter } from 'react-router';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyle from 'styles/global';
 import { Home, SignUp, Login } from 'pages/index';
-
-export const LocationDisplay = withRouter(({ location }) => (
-  <div data-testid="location-display">{location.pathname}</div>
-));
 
 function App() {
   return (

@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Wrapper } from 'styles/variables';
-import { LocationDisplay } from 'App';
+import LocationDisplay from 'utils/router';
 import * as S from './style';
 
 const SignUpForm = () => {

@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Wrapper } from 'styles/variables';
-import { LocationDisplay } from 'App';
+import LocationDisplay from 'utils/router';
 import * as S from './style';
 
 const LoginPopup = () => {

@@ -12,22 +12,18 @@ const initialState = {
 const reducer = handleActions(
   {
     [actions.REQUEST]: (state, _action) => {
-      return produce(state, draft => {
-        draft.signupLoading = true;
-      });
+      return produce(state, draft => draft);
     },
 
     [actions.SUCCESS]: (state, _action) => {
       return produce(state, draft => {
         draft.signupSuccess = true;
-        draft.signupLoading = false;
       });
     },
 
     [actions.FAILURE]: (state, action) => {
       return produce(state, draft => {
         draft.signupError = action.payload.error;
-        draft.signupLoading = false;
       });
     },
   },

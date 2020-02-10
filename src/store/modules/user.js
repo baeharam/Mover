@@ -23,7 +23,7 @@ const reducer = handleActions(
     [USER_LOGIN]: (state, action) => {
       return produce(state, draft => {
         draft.isLoggedIn = true;
-        draft.user = action.payload;
+        draft.user = action.payload.user;
       });
     },
 

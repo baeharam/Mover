@@ -1,61 +1,47 @@
 // @flow
 
-import { createAction, handleActions, type ActionType } from 'redux-actions';
+import { handleActions, type ActionType } from 'redux-actions';
 import produce from 'immer';
+import createRequestAction from '../util/createRequestAction';
 
-// Actions
-
-const SIGNUP_REQUEST = 'signup/SIGNUP_REQUEST';
-const SIGNUP_SUCCESS = 'signup/SIGNUP_SUCCESS';
-const SIGNUP_FAILURE = 'signup/SIGNUP_FAILURE';
-
-// Action Creators
-
-export const signupRequest = createAction<string, *>(SIGNUP_REQUEST);
-export const signupSuccess = createAction<string, *>(SIGNUP_SUCCESS);
-export const signupFailure = createAction<string, {| error: string |}>(
-  SIGNUP_FAILURE,
-);
-
-type SignUpRequestType = ActionType<typeof signupRequest>;
-type SignUpSuccessType = ActionType<typeof signupSuccess>;
-type SignUpFailureType = ActionType<typeof signupFailure>;
-
-type SignUpActionType =
-  | SignUpRequestType
-  | SignUpSuccessType
-  | SignUpFailureType;
+export const actions = createRequestAction('SIGNUP');
 
 // State
 
 type SignUpStateType = {
   signupSuccess: boolean,
-  signupLoading: boolean,
   signupError: string,
 };
 
 const initialState: SignUpStateType = {
   signupSuccess: false,
-  signupLoading: false,
   signupError: '',
 };
 
+type SignUpActionRequestType = ActionType<typeof actions.request>;
+type SignUpActionSuccessType = ActionType<typeof actions.success>;
+type SignUpActionFailureType = ActionType<typeof actions.failure>;
+type SignUpActionType =
+  | SignUpActionRequestType
+  | SignUpActionSuccessType
+  | SignUpActionFailureType;
+
 const reducer = handleActions<SignUpStateType, SignUpActionType>(
   {
-    [SIGNUP_REQUEST]: (state, _action) => {
+    [actions.REQUEST]: (state, _action) => {
       return produce(state, draft => {
         draft.signupLoading = true;
       });
     },
 
-    [SIGNUP_SUCCESS]: (state, _action) => {
+    [actions.SUCCESS]: (state, _action) => {
       return produce(state, draft => {
         draft.signupSuccess = true;
         draft.signupLoading = false;
       });
     },
 
-    [SIGNUP_FAILURE]: (state, action: SignUpFailureType) => {
+    [actions.FAILURE]: (state, action) => {
       return produce(state, draft => {
         draft.signupError = action.payload.error;
         draft.signupLoading = false;

@@ -1,58 +1,47 @@
 // @flow
 
-import { createAction, handleActions, type ActionType } from 'redux-actions';
+import { handleActions, type ActionType } from 'redux-actions';
 import produce from 'immer';
+import createRequestAction from '../util/createRequestAction';
 
-// Actions
-
-const LOGIN_REQUEST = 'login/LOGIN_REQUEST';
-const LOGIN_SUCCESS = 'login/LOGIN_SUCCESS';
-const LOGIN_FAILURE = 'login/LOGIN_FAILURE';
-
-// Action Creators
-
-export const loginRequest = createAction<string, *>(LOGIN_REQUEST);
-export const loginSuccess = createAction<string, *>(LOGIN_SUCCESS);
-export const loginFailure = createAction<string, {| error: string |}>(
-  LOGIN_FAILURE,
-);
-
-type LoginRequestType = ActionType<typeof loginRequest>;
-type LoginSuccessType = ActionType<typeof loginSuccess>;
-type LoginFailureType = ActionType<typeof loginFailure>;
-
-type LoginActionType = LoginRequestType | LoginSuccessType | LoginFailureType;
+export const actions = createRequestAction('LOGIN');
 
 // State
 
 type LoginStateType = {
   loginSuccess: boolean,
-  loginLoading: boolean,
   loginError: string,
 };
 
 const initialState: LoginStateType = {
   loginSuccess: false,
-  loginLoading: false,
   loginError: '',
 };
 
+type LoginActionRequestType = ActionType<typeof actions.request>;
+type LoginActionSuccessType = ActionType<typeof actions.success>;
+type LoginActionFailureType = ActionType<typeof actions.failure>;
+type LoginActionType =
+  | LoginActionRequestType
+  | LoginActionSuccessType
+  | LoginActionFailureType;
+
 const reducer = handleActions<LoginStateType, LoginActionType>(
   {
-    [LOGIN_REQUEST]: (state, _action) => {
+    [actions.REQUEST]: (state, _action) => {
       return produce(state, draft => {
         draft.loginLoading = true;
       });
     },
 
-    [LOGIN_SUCCESS]: (state, _action) => {
+    [actions.SUCCESS]: (state, _action) => {
       return produce(state, draft => {
         draft.loginSuccess = true;
         draft.loginLoading = false;
       });
     },
 
-    [LOGIN_FAILURE]: (state, action: LoginFailureType) => {
+    [actions.FAILURE]: (state, action) => {
       return produce(state, draft => {
         draft.loginError = action.payload.error;
         draft.loginLoading = false;

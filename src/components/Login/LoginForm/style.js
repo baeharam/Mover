@@ -1,11 +1,8 @@
-// @flow
-
-import type { ComponentType } from 'react';
 import styled from 'styled-components';
 import oc from 'open-color-js';
 import { primaryColor } from 'styles/variables';
 
-const PasswordMessage: ComponentType<*> = styled.p`
+const PasswordMessage = styled.p`
   color: ${primaryColor};
   font-weight: bold;
   text-align: center;
@@ -13,7 +10,7 @@ const PasswordMessage: ComponentType<*> = styled.p`
   font-size: 1rem;
 `;
 
-const SignUpMessage: ComponentType<*> = styled.p`
+const SignUpMessage = styled.p`
   color: ${oc.gray5};
   font-weight: bold;
   text-align: center;

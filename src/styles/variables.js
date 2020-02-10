@@ -1,6 +1,3 @@
-// @flow
-
-import type { ComponentType } from 'react';
 import styled from 'styled-components';
 
 // Themeing
@@ -12,7 +9,7 @@ export const weakBlackColor = '#232323';
 
 // Component
 
-export const Wrapper: ComponentType<*> = styled.div`
+export const Wrapper = styled.div`
   width: 90vw;
   margin: 0 auto;
 `;

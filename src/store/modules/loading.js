@@ -1,4 +1,3 @@
-// @flow
 
 import { createAction, handleActions, type ActionType } from 'redux-actions';
 import produce from 'immer';

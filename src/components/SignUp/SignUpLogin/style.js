@@ -1,13 +1,10 @@
-// @flow
-
-import type { ComponentType } from 'react';
 import styled from 'styled-components';
 import oc from 'open-color-js';
 import { AiFillFacebook } from 'react-icons/ai';
 import { secondaryColor } from 'styles/variables';
 import { buttonStyle, inputFontSize } from '../SignUpForm/style';
 
-const Divider: ComponentType<*> = styled.div`
+const Divider = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
@@ -29,7 +26,7 @@ const Divider: ComponentType<*> = styled.div`
   }
 `;
 
-const LoginButton: ComponentType<*> = styled.button`
+const LoginButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +35,7 @@ const LoginButton: ComponentType<*> = styled.button`
   ${buttonStyle}
 `;
 
-const FacebookIcon: ComponentType<*> = styled(AiFillFacebook)`
+const FacebookIcon = styled(AiFillFacebook)`
   font-size: calc(${inputFontSize} + 0.2rem);
   margin-right: 1rem;
 `;

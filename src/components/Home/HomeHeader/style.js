@@ -1,11 +1,8 @@
-// @flow
-
 import type { ComponentType } from 'react';
 import styled from 'styled-components';
 import { weakBlackColor } from 'styles/variables';
-import type { StyleType } from './types';
 
-const HomeHeader: ComponentType<*> = styled.header`
+const HomeHeader = styled.header`
   position: fixed;
   left: 0;
   top: 0;
@@ -13,7 +10,7 @@ const HomeHeader: ComponentType<*> = styled.header`
   height: 10vh;
 `;
 
-const Container: ComponentType<*> = styled.div`
+const Container = styled.div`
   position: relative;
   display: flex;
   justify-content: flex-end;
@@ -55,7 +52,7 @@ const MenuButton: ComponentType<StyleType> = styled.button`
   }
 `;
 
-const Nav: ComponentType<StyleType> = styled.nav`
+const Nav = styled.nav`
   position: absolute;
   left: 0;
   top: 0;
@@ -69,14 +66,14 @@ const Nav: ComponentType<StyleType> = styled.nav`
   padding: 1rem;
 `;
 
-const UL: ComponentType<*> = styled.ul`
+const UL = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   color: white;
 `;
 
-const LI: ComponentType<*> = styled.li`
+const LI = styled.li`
   font-size: 20px;
   margin-bottom: 1rem;
   cursor: pointer;

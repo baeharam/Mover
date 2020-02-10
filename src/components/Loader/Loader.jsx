@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import { Ring } from 'react-awesome-spinners';
 import { primaryColor } from 'styles/variables';

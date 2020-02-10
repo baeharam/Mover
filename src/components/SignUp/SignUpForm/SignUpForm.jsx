@@ -1,5 +1,3 @@
-// @flow
-
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -29,8 +27,7 @@ const SignUpForm = () => {
     register({ name: 'password' }, { required: '비밀번호를 입력하세요' });
   }, []);
 
-  const onChange = name => (e: InputEventType) =>
-    setValue(name, e.target.value, true);
+  const onChange = name => e => setValue(name, e.target.value, true);
 
   return (
     <>

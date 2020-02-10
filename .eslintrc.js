@@ -3,11 +3,7 @@ module.exports = {
   "extends": [
     "airbnb",
     "plugin:prettier/recommended",
-    "plugin:flowtype/recommended",
     "prettier/react"
-  ],
-  "plugins": [
-    "flowtype"
   ],
   "settings": {
     "import/resolver": {
@@ -41,10 +37,6 @@ module.exports = {
         "ignoreTemplateLiterals": true,
         "ignoreRegExpLiterals": true
       }
-    ],
-    "flowtype/require-valid-file-annotation": [
-      2,
-      "always"
     ],
     "no-param-reassign": ["error", { props: true, ignorePropertyModificationsFor: ["draft"] }],
     "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],

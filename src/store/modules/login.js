@@ -1,32 +1,15 @@
-// @flow
-
-import { handleActions, type ActionType } from 'redux-actions';
+import { handleActions } from 'redux-actions';
 import produce from 'immer';
 import createRequestAction from '../util/createRequestAction';
 
 export const actions = createRequestAction('LOGIN');
 
-// State
-
-type LoginStateType = {
-  loginSuccess: boolean,
-  loginError: string,
-};
-
-const initialState: LoginStateType = {
+const initialState = {
   loginSuccess: false,
   loginError: '',
 };
 
-type LoginActionRequestType = ActionType<typeof actions.request>;
-type LoginActionSuccessType = ActionType<typeof actions.success>;
-type LoginActionFailureType = ActionType<typeof actions.failure>;
-type LoginActionType =
-  | LoginActionRequestType
-  | LoginActionSuccessType
-  | LoginActionFailureType;
-
-const reducer = handleActions<LoginStateType, LoginActionType>(
+const reducer = handleActions(
   {
     [actions.REQUEST]: (state, _action) => {
       return produce(state, draft => {

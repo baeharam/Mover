@@ -1,5 +1,3 @@
-// @flow
-
 import loading, {
   START_LOADING,
   FINISH_LOADING,

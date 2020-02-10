@@ -1,4 +1,3 @@
-// @flow
 
 import { takeLatest } from 'redux-saga/effects';
 import { actions } from '../modules/login';

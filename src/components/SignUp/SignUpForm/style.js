@@ -1,5 +1,3 @@
-// @flow
-
 import type { ComponentType } from 'react';
 import styled, { css } from 'styled-components';
 import oc from 'open-color-js';
@@ -24,7 +22,7 @@ const buttonStyle = css`
   ${inputStyle};
 `;
 
-const Input: ComponentType<*> = styled.input`
+const Input = styled.input`
   display: block;
   background-color: ${beigeColor};
   margin-bottom: 1rem;
@@ -43,7 +41,7 @@ const Input: ComponentType<*> = styled.input`
   }
 `;
 
-const Form: ComponentType<*> = styled.form`
+const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,14 +49,14 @@ const Form: ComponentType<*> = styled.form`
   width: 100%;
 `;
 
-const SignUpButton: ComponentType<*> = styled.button`
+const SignUpButton = styled.button`
   background-color: ${primaryColor};
   margin-bottom: 1rem;
 
   ${buttonStyle};
 `;
 
-const Container: ComponentType<*> = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,7 +68,7 @@ const Container: ComponentType<*> = styled.div`
   }
 `;
 
-const Message: ComponentType<*> = styled.p`
+const Message = styled.p`
   text-align: center;
   color: ${oc.gray5};
   font-weight: bold;

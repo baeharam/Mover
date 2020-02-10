@@ -1,18 +1,8 @@
-// @flow
-
 import { put, call } from 'redux-saga/effects';
 import { startLoading, finishLoading } from '../modules/loading';
-import { type RequestActionType } from './createRequestAction';
 
-export default function createRequestSaga(
-  actions: RequestActionType,
-  api: any,
-) {
-  return function* requestSaga({
-    payload,
-  }: {
-    payload: any,
-  }): Generator<any, void, any> {
+export default function createRequestSaga(actions, api) {
+  return function* requestSaga({ payload }) {
     try {
       yield put(startLoading({ type: actions.TYPE }));
       const result = yield call(api, payload);

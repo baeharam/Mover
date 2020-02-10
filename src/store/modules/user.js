@@ -1,6 +1,4 @@
-// @flow
-
-import { createAction, handleActions, type ActionType } from 'redux-actions';
+import { createAction, handleActions } from 'redux-actions';
 import produce from 'immer';
 
 // Actions
@@ -10,40 +8,19 @@ const USER_LOGOUT = 'user/USER_LOGOUT';
 
 // Action Creators
 
-type UserLoginActionPayloadType = {
-  name: string,
-  profile: string,
-  collections: Array<number>,
-  followings: Array<number>,
-  followers: Array<number>,
-  movies: Array<number>,
-};
-
-export const userLogin = createAction<string, UserLoginActionPayloadType>(
-  USER_LOGIN,
-);
-export const userLogout = createAction<string, *>(USER_LOGOUT);
-
-type UserLoginActionType = ActionType<typeof userLogin>;
-type UserLogoutActionType = ActionType<typeof userLogout>;
-
-type UserActionType = UserLoginActionType | UserLogoutActionType;
+export const userLogin = createAction(USER_LOGIN);
+export const userLogout = createAction(USER_LOGOUT);
 
 // State
 
-type UserStateType = {
-  isLoggedIn: boolean,
-  user: UserLoginActionPayloadType,
-};
-
-const initialState: UserStateType = {
+const initialState = {
   isLoggedIn: false,
   user: {},
 };
 
-const reducer = handleActions<UserStateType, UserActionType>(
+const reducer = handleActions(
   {
-    [USER_LOGIN]: (state, action: UserLoginActionType) => {
+    [USER_LOGIN]: (state, action) => {
       return produce(state, draft => {
         draft.isLoggedIn = true;
         draft.user = action.payload;

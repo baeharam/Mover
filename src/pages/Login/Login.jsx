@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { LoginIntro, LoginForm } from 'components/Login/index';

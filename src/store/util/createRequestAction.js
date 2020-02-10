@@ -1,18 +1,6 @@
-// @flow
-
 import { createAction } from 'redux-actions';
 
-type ActionCreatorType = (payload: any) => { type: string, payload: any };
-
-export type RequestActionType = {
-  TYPE: string,
-  request: ActionCreatorType,
-  success: ActionCreatorType,
-  failure: ActionCreatorType,
-  [key: string]: string,
-};
-
-export default function createRequestAction(type: string): RequestActionType {
+export default function createRequestAction(type) {
   const REQUEST = `${type}/REQUEST`;
   const SUCCESS = `${type}/SUCCESS`;
   const FAILURE = `${type}/FAILURE`;
@@ -22,8 +10,8 @@ export default function createRequestAction(type: string): RequestActionType {
     REQUEST,
     SUCCESS,
     FAILURE,
-    request: createAction<string, any>(REQUEST),
-    success: createAction<string, any>(SUCCESS),
-    failure: createAction<string, {| error: string |}>(FAILURE),
+    request: createAction(REQUEST),
+    success: createAction(SUCCESS),
+    failure: createAction(FAILURE),
   };
 }

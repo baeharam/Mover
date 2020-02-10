@@ -1,5 +1,3 @@
-// @flow
-
 import React, { useState } from 'react';
 import { Wrapper } from 'styles/variables';
 import * as S from './style';

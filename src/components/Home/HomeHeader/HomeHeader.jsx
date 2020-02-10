@@ -1,11 +1,8 @@
-// @flow
-
 import React, { useState } from 'react';
 import { Wrapper } from 'styles/variables';
 import * as S from './style';
-import type { MenuButtonType } from './types';
 
-const MenuButton = ({ onClickMenu, open }: MenuButtonType) => {
+const MenuButton = ({ onClickMenu, open }) => {
   return (
     <S.MenuButton
       open={open}

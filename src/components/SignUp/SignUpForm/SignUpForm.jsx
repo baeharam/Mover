@@ -5,12 +5,17 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Wrapper } from 'styles/variables';
 import LocationDisplay from 'utils/router';
+import { actions } from 'store/modules/signup';
+import { useDispatch } from 'react-redux';
 import * as S from './style';
 
 const SignUpForm = () => {
   const { register, handleSubmit, errors, setValue } = useForm();
+  const dispatch = useDispatch();
 
-  const onSubmit = () => {};
+  const onSubmitSignUp = () => {
+    dispatch(actions.request());
+  };
 
   useEffect(() => {
     register({ name: 'name' }, { required: '이름을 입력하세요' });
@@ -32,7 +37,7 @@ const SignUpForm = () => {
       <section>
         <Wrapper>
           <S.Container>
-            <S.Form data-testid="form" onSubmit={handleSubmit(onSubmit)}>
+            <S.Form data-testid="form" onSubmit={handleSubmit(onSubmitSignUp)}>
               <S.Input
                 name="name"
                 type="text"

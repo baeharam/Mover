@@ -10,15 +10,24 @@ import {
   SignUpButton,
 } from 'components/SignUp/SignUpForm/style';
 import LocationDisplay from 'utils/router';
+import { useDispatch } from 'react-redux';
+import { actions } from 'store/modules/login';
 import * as S from './style';
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
+
+  const onSubmitLogin = e => {
+    e.preventDefault();
+    dispatch(actions.request());
+  };
+
   return (
     <>
       <section>
         <Wrapper>
           <Container>
-            <Form>
+            <Form onSubmit={onSubmitLogin}>
               <Input type="email" placeholder="이메일" />
               <Input type="password" placeholder="비밀번호" />
               <SignUpButton type="submit">로그인</SignUpButton>

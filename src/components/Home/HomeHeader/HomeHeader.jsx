@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Wrapper } from 'styles/variables';
+import PropTypes from 'prop-types';
 import * as S from './style';
 
 const MenuButton = ({ onClickMenu, open }) => {
@@ -15,6 +16,11 @@ const MenuButton = ({ onClickMenu, open }) => {
       <div />
     </S.MenuButton>
   );
+};
+
+MenuButton.propTypes = {
+  onClickMenu: PropTypes.func.isRequired,
+  open: PropTypes.bool.isRequired,
 };
 
 const HomeHeader = () => {
